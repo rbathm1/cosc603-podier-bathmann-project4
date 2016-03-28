@@ -14,7 +14,8 @@ public class Fibonacci {
 	 */
 	public int fibonacci(int n) {
 		switch (n) {
-			case 0: return 1;
+			//case 0: return 1; This case statement is in error in which it provides a return value of one as opposed to zero
+		    case 0: return 0;
 			case 1: return 1;
 			default: return (fibonacci(n - 1) + fibonacci(n - 2));
 		}
