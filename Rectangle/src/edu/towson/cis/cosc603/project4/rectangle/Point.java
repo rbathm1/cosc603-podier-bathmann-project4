@@ -15,7 +15,8 @@ public class Point {
 	 * @param y the y
 	 */
 	Point(Double x, Double y) {
-		this.x = y;
+		//this.x = y;//This is the error in the code because it sets the x value to the y coordinate
+		this.x = x;
 		this.y = y;
 	}
 }
