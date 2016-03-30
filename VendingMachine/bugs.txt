@@ -1,0 +1,21 @@
+We were unable to find any syntactical or logical bugs in the code. However, there is room for improvement
+to better model how a vending machine works.
+
+1. The insertMoney method could use the number of nickels, dimes, quarters, and dollar bills as parameters
+instead of a single double.
+
+2. The returnChange method could return an object that describes how many of each type of coin to return
+instead of a single double.
+
+3. Instead of pre-defined slots, the machine could use a set of queues that store multiple items
+of the same type. This would change how the VendingMachineItem class would work, because each
+queue would be assigned a name and price.
+
+4. The slot code could be more strongly typed if an enumeration is used.
+
+5. The makePurchase method could return a VendingMachineItem if the purchase is successful and null
+otherwise instead of requiring the use of the getItem method too.
+
+6. The VendingMachineException is very general. This can be subclassed to further categorize the type
+of exceptions. Use of multipurpose exceptions in the lava.lang package could also be considered. For instance,
+if a negative price was specified for a vending machine item, an IllegalArgumentException could be thrown.
