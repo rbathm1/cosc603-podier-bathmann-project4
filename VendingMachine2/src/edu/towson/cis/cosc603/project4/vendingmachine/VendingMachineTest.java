@@ -326,6 +326,26 @@ public class VendingMachineTest {
 		// add additional test code here
 		assertTrue(result);
 	}
+	
+	/**
+	 * Run the boolean makePurchase(String) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy a human!
+	 */
+	@Test
+	public void testMakePurchase_6()
+		throws Exception {
+		VendingMachine fixture = new VendingMachine();
+		fixture.insertMoney(1);
+		String code = "D";
+		fixture.addItem(new VendingMachineItem("candy", 100), code);
+		boolean result = fixture.makePurchase(code);
+
+		// add additional test code here
+		assertFalse(result);
+	}
 
 	/**
 	 * Run the VendingMachineItem removeItem(String) method test.
