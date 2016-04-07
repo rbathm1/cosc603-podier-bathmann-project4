@@ -108,6 +108,27 @@ public class VendingMachineTest {
 
 		// add additional test code here
 	}
+	
+	/**
+	 * Run the void addItem(VendingMachineItem,String) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 4/6/16 10:59 PM
+	 */
+	@Test(expected = edu.towson.cis.cosc603.project4.vendingmachine.VendingMachineException.class)
+	public void testAddItem_4()
+		throws Exception {
+		VendingMachine fixture = new VendingMachine();
+		fixture.balance = 1.0;
+		VendingMachineItem item = new VendingMachineItem("", 1.0);
+		String code = "A";
+
+		fixture.addItem(item, code);
+
+		// add additional test code here
+		fixture.addItem(item, code);
+	}
 
 	/**
 	 * Run the double getBalance() method test.
@@ -238,7 +259,7 @@ public class VendingMachineTest {
 		throws Exception {
 		VendingMachine fixture = new VendingMachine();
 		fixture.balance = 1.0;
-		String code = "A";
+		String code = "B";
 
 		boolean result = fixture.makePurchase(code);
 
@@ -258,7 +279,7 @@ public class VendingMachineTest {
 		throws Exception {
 		VendingMachine fixture = new VendingMachine();
 		fixture.balance = 1.0;
-		String code = "A";
+		String code = "C";
 
 		boolean result = fixture.makePurchase(code);
 
@@ -280,6 +301,26 @@ public class VendingMachineTest {
 		fixture.balance = 1.0;
 		String code = "";
 
+		boolean result = fixture.makePurchase(code);
+
+		// add additional test code here
+		assertTrue(result);
+	}
+	
+	/**
+	 * Run the boolean makePurchase(String) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy a human!
+	 */
+	@Test
+	public void testMakePurchase_5()
+		throws Exception {
+		VendingMachine fixture = new VendingMachine();
+		fixture.insertMoney(1);
+		String code = "D";
+		fixture.addItem(new VendingMachineItem("candy", 1), code);
 		boolean result = fixture.makePurchase(code);
 
 		// add additional test code here
@@ -345,6 +386,26 @@ public class VendingMachineTest {
 		// add additional test code here
 		assertNotNull(result);
 	}
+
+	/**
+	 * Run the VendingMachineItem removeItem(String) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy a human!
+	 */
+	@Test
+	public void testRemoveItem_4()
+			throws Exception {
+			VendingMachine fixture = new VendingMachine();
+			fixture.balance = 1.0;
+			String code = "A";
+			fixture.addItem(new VendingMachineItem("candy", 1), code);
+			VendingMachineItem result = fixture.removeItem(code);
+
+			// add additional test code here
+			assertNotNull(result);
+		}
 
 	/**
 	 * Run the double returnChange() method test.
